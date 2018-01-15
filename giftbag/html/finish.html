@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Document</title>
+	<link rel="stylesheet" href="../css/finish.min.css">
+	<link rel="stylesheet" href="../static/reset.css">
+	<!-- 引入样式 -->
+	<link rel="stylesheet" href="https://unpkg.com/mint-ui/lib/style.css">
+</head>
+<body>
+	<div id="addcard">
+		<!-- 进度条 -->
+		<div class="plan">
+			<div class="planline">
+				<div class="circle-left"></div>
+				<div class="cirline"></div>
+				<div class="circle-right"></div>
+			</div>
+			<div class="planwenzi">
+				<div class="import">输入卡号</div>
+				<div class="verily">银行验证信息</div>
+			</div>
+		</div>
+		<!-- 姓名 -->
+		<div class="padd">
+			<span class="name"><strong>手机号</strong></span>
+			<span class="inp">15716161616</span>
+		</div>
+		<!-- 卡号 -->
+		<div class="paddbo">			
+			<input type="text" class="inpl">
+			<div class="yanzhengm">
+				<el-button type="primary" class="huoqu">获取验证码</el-button>
+			</div>
+		</div>
+		<!-- 按钮 -->
+		<div class="btmar">
+			<mt-button type="primary" class="but">下一步</mt-button>
+		</div>
+		 
+	</div>
+</body>
+<script src="../static/polyfill.min.js"></script>
+<script src="../static/flexible.js"></script>
+<script src="../static/vue.js"></script>
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/mint-ui/lib/index.js"></script>
+<script>
+	var vm = new Vue({
+		data:function (){
+			return {				
+				
+			}
+		},
+		methods: {
+		    
+		  }
+	})
+	vm.$mount('#addcard')
+</script>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Document</title>
+	<link rel="stylesheet" href="../css/dredge.min.css">
+	<link rel="stylesheet" href="../static/reset.css">	
+	<link rel="stylesheet" href="../static/animate.css">
+	<!-- 引入样式 -->
+	<link rel="stylesheet" href="https://unpkg.com/mint-ui/lib/style.css">
+</head>
+<body>
+	<div id="dredge">
+	 <a href="./equities.html">
+	  <!-- plus会员权益 -->
+	  <div class="equity">
+	    <!-- 权益详情 -->
+	    <div class="equity-head">
+	      <span class="title">Plus会员权益</span>
+	      <span class="particulars">权益详情 <i class="el-icon-arrow-right"></i></span>
+	    </div>
+	    <!-- 内容部分 -->
+	    <div class="content">
+	      <ul>
+	        <li v-for="(item,index) in cont" :key="index">
+	          <div class="img"><img :src="item.url"></div>
+	          <p class="eqname">{{item.name}}</p>
+	        </li>
+	      </ul>
+	    </div>
+	  </div>
+	  <!-- 会员详情 -->
+	  <a href="./particulars.html" class="member">会员详情</a>
+	  <div class="line"></div>
+	  <!-- 专属客服 -->
+	  <div class="zhuanshu">
+	  	<div class="xiankefu">
+	  		<p class="kefutitle"><strong>专属客服</strong></p>
+	  			<div class="kefuimg" @click="Toast" >
+	  				<img :src="kefu.little_img" class="onlimg">
+	  				<p class="kefubo">在线客服</p>	  		
+	  			</div>		  			
+	  	</div>
+	  	 <div class="tanchu animated fadeIn" v-if="buyid == 0">
+	  		此权益是Plus会员专享，请开通后使用！
+	  	 </div>
+	   </div>
+
+
+	  <!-- 广告位 -->
+<!-- 	  <div class="location">
+	    <p>广告位（顺联与梦天公司战略合作）买梦天公司产品送顺联会员权益宣传标语</p>
+	  </div> -->
+	  <!-- 广告 -->
+	  <div class="advertising tct" v-for="(item,index) in adver" :key="index" @click="adverimg" >
+	  	<img :src="item.img">
+	  </div>
+	  </a>
+	</div>
+
+</body>
+<script src="../static/polyfill.min.js"></script>
+<script src="../static/vue.js"></script>
+<script src="../static/axios.min.js"></script>
+<!-- <script src="../static/jquery-1.12.4.min.js"></script> -->
+<script src="../static/flexible.js"></script>
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/mint-ui/lib/index.js"></script>
+<script src="../js/min/dredge.min.js"></script>	
+
+</html>
