@@ -10,7 +10,8 @@ var vm = new Vue({
 			equity:{},
 			index: 0,  //tab样式
 			// txmoney:false //可提现金额
-			setling:''
+			setling:'',
+			setled:''
 		}
 	},
 	methods: {
@@ -26,6 +27,8 @@ var vm = new Vue({
 	    		this.pro  = this.datadre.plus_grow.progress 	    		
 	    		this.value2=this.pro.level
 	    		this.setling=this.datadre.plus_equity.settling_money
+	    		this.setled=this.datadre.plus_equity.settled_money
+
 	    		// this.equity=this.datadre.plus_equity
 	    		// console.log(response);
 	    		// console.log(this.sell)

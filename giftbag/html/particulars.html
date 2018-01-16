@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="stylesheet" href="../css/particulars.min.css">
-	<link rel="stylesheet" href="../static/reset.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">	
+	<link rel="stylesheet" href="http://static.sldlcdn.com/resource/shuangshier/css/reset/reset.css">
 	<link rel="stylesheet" href="../static/animate.css">
 	<!-- 引入样式 -->
-	<link rel="stylesheet" href="https://unpkg.com/mint-ui/lib/style.css">
+	<link rel="stylesheet" href="http://static.sldlcdn.com/resource/shuangshier/css/reset/mint.css">
+	<link rel="stylesheet" href="../css/particulars.min.css">
 	<title>Document</title>
 </head>
 <body>
@@ -36,7 +36,7 @@
 			<div class="tabtwo">
 				<div class="tableft"  v-if="index == 0">{{setling}}</div>
 				<div class="tabright"  v-else>
-					<p class="estirmoney">{{datadre.plus_equity.settled_money}}</p>
+					<p class="estirmoney">{{setled}}</p>
 					<p class="estdetail"><img src="../images/icon_mingxi@2x.png" class="esimg">提现明细</p>
 					<mt-button type="primary" class="estirdop" @click="tishi">提现</mt-button>
 				</div>
@@ -93,11 +93,11 @@
 		</div>
 	</div>
 <script src="../static/polyfill.min.js"></script>
-<script src="../static/flexible.js"></script>
-<script src="../static/vue.js"></script>
+<script src="http://static.sldlcdn.com/resource/script/flexible.js"></script>
+<script src="http://static.sldlcdn.com/resource/shuangshier/js/lib/vue.js"></script>
 <script src="../static/axios.min.js"></script>
 <!-- 引入组件库 -->
-<script src="https://unpkg.com/mint-ui/lib/index.js"></script>
+<script src="https://static.sldlcdn.com/resource/shuangshier/js/lib/mint.js"></script>
 <script src="../js/min/particulars.min.js"></script>
 </body>
 </html>

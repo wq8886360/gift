@@ -9,7 +9,8 @@ var vm = new Vue({
 	},
 	methods: {
 		interface:function() {
-			let url = 'https://api-test.shunliandongli.com/v1/Plus/PlusEquity.json?pin=11009';
+			// let url = 'https://api-test.shunliandongli.com/v1/Plus/PlusEquity.json?pin=11009';
+			let url = 'https://api-test.shunliandongli.com/v1/Plus/PlusEquity.json';
 			axios.get(url).then(response => {
 				this.datadre = response.data.data;
 				this.items = this.datadre.item;
