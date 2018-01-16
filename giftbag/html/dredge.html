@@ -31,7 +31,9 @@
 	    </div>
 	  </div>
 	  <!-- 会员详情 -->
-	  <a :href="'./particulars.html?pin='+pin+'wskey='+wskey" class="member">会员详情</a>
+	  <!-- <a :href="'./particulars.html?pin='+pin+'&wskey='+wskey" class="member" v-if="equ.is_buy == 1">会员详情</a> -->
+	  <a href="slmall://outApp?itemId=www.baidu.com" class="member" v-if="equ.is_buy == 1">会员详情</a>
+	  <a :href="'slmall://shop?itemId='+shopid" class="member" v-if="equ.is_buy == 0" >立即开通</a> 
 	  <div class="line"></div>
 	  <!-- 专属客服 -->
 	  <div class="zhuanshu">
@@ -53,7 +55,7 @@
 	    <p>广告位（顺联与梦天公司战略合作）买梦天公司产品送顺联会员权益宣传标语</p>
 	  </div> -->
 	  <!-- 广告 -->
-	  <div class="advertising tct" v-for="(item,index) in adver" :key="index" @click="adverimg" >
+	  <div class="advertising tct" v-for="(item,index) in adver" :key="index" @click="adverimg(item.type,item.itemId)" >
 	  	<img :src="item.img">
 	  </div>
 	  </a>
