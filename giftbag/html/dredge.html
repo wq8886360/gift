@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="http://static.sldlcdn.com/resource/shuangshier/css/reset/mint.css">
 	<link rel="stylesheet" href="../css/dredge.min.css">
 </head>
-<body>
+<body> 
 	<div id="dredge">
 	 <a href="./equities.html">
 	  <!-- plus会员权益 -->
@@ -30,6 +30,7 @@
 	      </ul>
 	    </div>
 	  </div>
+	  </a>
 	  <!-- 会员详情 -->
 	  <!-- <a :href="'./particulars.html?pin='+pin+'&wskey='+wskey" class="member" v-if="equ.is_buy == 1">会员详情</a> -->
 	  <a href="slmall://outApp?itemId=www.baidu.com" class="member" v-if="equ.is_buy == 1">会员详情</a>
@@ -58,7 +59,7 @@
 	  <div class="advertising tct" v-for="(item,index) in adver" :key="index" @click="adverimg(item.type,item.itemId)" >
 	  	<img :src="item.img">
 	  </div>
-	  </a>
+	  
 	</div>
 
 </body>

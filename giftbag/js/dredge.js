@@ -15,8 +15,8 @@ var vm = new Vue({
 	},
 	methods: {
 	    interface:function(){ 
-	    	// let url = 'https://api-test.shunliandongli.com/v1/Plus/PlusList.json?pin=11009'
-	    	let url = "'https://api-test.shunliandongli.com/v1/Plus/PlusList.json" 
+	    	let url = 'https://api-test.shunliandongli.com/v1/Plus/PlusList.json?pin=11009'
+	    	// let url = "'https://api-test.shunliandongli.com/v1/Plus/PlusList.json" 
 	    	axios.get(url).then( response => {	    	    
 	    		this.datadre = response.data.data
 	    		this.cont = this.datadre.plus_equity.content;
@@ -27,8 +27,8 @@ var vm = new Vue({
 	    		this.equ = this.datadre.plus_equity
 	    		this.shopid = this.datadre.shopid
 	    		// console.log(this.equ.is_buy)
-	    		console.log(this.pin)    		
-    			// console.log(response);
+	    		// console.log(this.pin)    		
+    			console.log(this.datadre);
   				})		 
 	    },
 	    Toast:function(){	
@@ -53,7 +53,7 @@ var vm = new Vue({
 	  },
 	  created:function(){
 	  	this.interface(); 
-	  	// console.log(this)	  
+	  		  
 	  }
 })
 vm.$mount('#dredge')

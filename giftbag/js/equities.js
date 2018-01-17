@@ -15,15 +15,17 @@ var vm = new Vue({
 				this.datadre = response.data.data;
 				this.items = this.datadre.item;
 				this.img = this.items.content
+				this.kefuid = this.items[1].content[0].img_id
+				// console.log(this.kefuid)
 				// console.log(this.items)
 
-				// console.log(response);
+				console.log(response);
 			});
 		},
 		touch:function(){
 			this.buyid = this.datadre.is_buy;
 	    	if(this.buyid == 1){
-
+	    		window.location.href = 'slmall://kefu?itemId=' + this.kefuid
 	    	}
 	    	else{
 	    		let _this = this

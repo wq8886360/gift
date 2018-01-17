@@ -5,27 +5,42 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>Document</title>	
 	<link rel="stylesheet" href="http://static.sldlcdn.com/resource/shuangshier/css/reset/reset.css">
+	<!-- 引入样式 -->
+	<link rel="stylesheet" href="http://static.sldlcdn.com/resource/shuangshier/css/reset/mint.css">
 	<link rel="stylesheet" href="../css/detail.min.css">
 </head>
 <body>
-	<div id="detail" v-if="data">
+	<div id="detail">
 		<table class="deta">
-		  <tr class="detahead">
-		    <th><strong>提现时间</strong></th>
-		    <th style="border-right: 0.01rem solid #eee"><strong>提现金额</strong></th>
-		    <th><strong>状态</strong></th>
-		  </tr>
-		  <tr class="padding">
-		    <td>2017-12-28 13:36:28</td>
-		    <td class="green">￥600000</td>
-		    <td>已打款</td>
-		  </tr>
-		</table>
+		  	<mt-loadmore :bottom-method="loadBottom" :bottom-all-loaded="list" ref="loadmore">
+		  	  <ul>
+		  	  	
+		  	  		<tr class="detahead"> 
+		    			<th><strong>提现时间</strong></th>
+		    			<th style="border-right: 0.01rem solid #eee"><strong>提现金额</	strong></th>
+		    			<th><strong>状态</strong></th>
+		 			</tr>
+		  	  	
+		  	    
+		  	    	<tr class="padding" v-for="(item,index) in list" :key="index">
+		   				<td>{{item.createtime}}</td>
+		    			<td class="green">{{item.money}}</td>
+		    			<td>{{item.status}}</td>
+		  			</tr>
+		  	   
+		  	  </ul>
+		  	</mt-loadmore>
+		
+		    
+		 
+		</table> 
 	</div>
 </body>
 <script src="../static/polyfill.min.js"></script>
 <script src="http://static.sldlcdn.com/resource/shuangshier/js/lib/vue.js"></script>
 <script src="../static/axios.min.js"></script>
 <script src="http://static.sldlcdn.com/resource/script/flexible.js"></script>
+<!-- 引入组件库 -->
+<script src="https://static.sldlcdn.com/resource/shuangshier/js/lib/mint.js"></script>
 <script src="../js/min/detail.min.js"></script>
 </html>
