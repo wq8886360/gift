@@ -21,8 +21,8 @@ var vm = new Vue({
 	      return val / 100;
 	    },
 	    interface:function() {
-	    	let url = "http://www.plus.com/index.php?m=Api&c=Plus&a=plusDetail&pin=" + this.pin + '&wskey='  +this.wskey;
-	    	// let url = 'http://www.plus.com/index.php?m=Api&c=Plus&a=plusDetail'
+	    	// let url = "http://www.plus.com/index.php?m=Api&c=Plus&a=plusDetail&pin=" + this.pin + '&wskey='  +this.wskey;
+	    	let url = 'http://www.plus.com/index.php?m=Api&c=Plus&a=plusDetail?=11009'
 	    	axios.get(url).then(response => {
 	    		this.datadre = response.data;
 	    		this.name = this.datadre.plus_info;
