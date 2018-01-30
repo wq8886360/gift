@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Document</title>	
+	<link rel="stylesheet" href="http://static.sldlcdn.com/resource/shuangshier/css/reset/reset.css">
+	<!-- 引入样式 -->
+	<link rel="stylesheet" href="http://static.sldlcdn.com/resource/shuangshier/css/reset/mint.css">
+	<link rel="stylesheet" href="../css/mtshop.min.css">
+</head>
+<body>
+	<div id="mtshop">
+		<div class="title">梦天电商欢迎您</div>
+		<div class="mtcont">
+			<img src="../images/bgb.png" class="mtbgb">
+			<img src="../images/mt.png" class="mtds">
+			<form action="" method="">
+				<div class="nember">
+					<label for="nember" class="mart">手机号码</label>
+					<input type="text" id="nember">
+				</div>
+				<div class="nember">
+					<label for="verifty">图形验证码</label>
+					<input type="text" id="verifty">
+					<div class="bgh"></div>
+				</div>
+				<div class="nember">
+					<label for="message">短信验证码</label>
+					<input type="text" id="message">
+					<div class="bgh"></div>
+				</div>
+			</form>			
+		</div>
+		<div class="read">
+			<span class="duigou"><img src="../images/icon-duigou.png"></span>
+			我已阅读并同意梦天电商的
+			<span class="readyh">《用户协议》</span>
+		</div>
+		<!-- 登录 -->
+		<div class="enter blue">登录</div>
+	</div>
+</body>
+<script src="http://static.sldlcdn.com/resource/script/flexible.js"></script>
+<script src="../static/polyfill.min.js"></script>
+<script src="http://static.sldlcdn.com/resource/shuangshier/js/lib/vue.js"></script>
+<!-- 引入组件库 -->
+<script src="https://static.sldlcdn.com/resource/shuangshier/js/lib/mint.js"></script>
+<script>
+	var vm = new Vue({
+		data:function (){
+			return {				
+				
+			}
+		},
+		methods: {
+		    
+		  }
+	})
+	vm.$mount('#mtshop')
+</script>
+</html>
