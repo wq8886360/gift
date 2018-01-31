@@ -15,21 +15,28 @@
 		<!-- 新年巨献 -->
 		<div class="yearcon">
 			<img src="../images/bgtp.png" class="yearbg">
-			<img src="../images/ddlb.png" class="ddlb">
+			<a href="../html/ddlist.html">
+				<img src="../images/ddlb.png" class="ddlb">
+			</a>	
 		</div>
 		<div class="line"></div>
 		<!-- 梦想礼包 -->
 		<div class="dreambag">
-			<div class="dreatitle">
-				<span class="dreatt">梦天礼包</span>
-				<img src="../images/icon-ri.png" class="dreatr">
-			</div>
-			<div class="dreamcont">
-				<div class="dreamxq">
-					<img src="../images/img_huodong@2x.png" class="dreamxm">
-					<p class="dreamwz">礼包名称包大礼654548545</p>
-					<p class="dreamma">￥666</p>
+			<a href="../html/baglist.html">
+				<div class="dreatitle">
+					<span class="dreatt">梦天礼包</span>
+					<img src="../images/icon-ri.png" class="dreatr">
 				</div>
+			</a>	
+			<div class="dreamcont">
+				<a href="../html/bagdet.html">
+					<div class="dreamxq">
+						<img src="../images/img_huodong@2x.png" class="dreamxm">
+						<p class="dreamwz">礼包名称包大礼654548545</p>
+						<p class="dreamma">￥666</p>
+					</div>
+				</a>
+				
 			</div>
 		</div>
 		<!-- 用户信息 --> 
@@ -54,11 +61,20 @@
 				<div :class="{ketixian: true, active: index == 1}" @click="changeTab(1)">可提现</div>
 			</div>
 			<div class="tabtwo">
-				<div class="tableft"  v-if="index == 0">{{setling}}</div>
+				<div class="tableft"  v-if="index == 0">
+					<p class="estirmoney">{{setling}}</p>
+					<a href="../html/estimate.html">
+						<mt-button type="primary" class="estirdop">明细</mt-button>
+					</a>		
+				</div>
 				<div class="tabright"  v-else>
-					<p class="estirmoney">{{setled}}</p>
-					<p class="estdetail"><img src="../images/icon_mingxi@2x.png" class="esimg">提现明细</p>
-					<mt-button type="primary" class="estirdop" @click="tishi">提现</mt-button>
+					<p class="estirmoney">20000</p>{{setled}}
+					<a href="../html/detail.html">
+						<p class="estdetail"><img src="../images/icon_mingxi@2x.png" class="esimg">提现明细</p>
+					</a>	
+					<a href="../html/addcard.html">
+						<mt-button type="primary" class="estirdop" @click="tishi">提现</mt-button>
+					</a>	
 				</div>
 			</div>
 			<!-- 弹出提示 -->

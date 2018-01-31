@@ -4,23 +4,21 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>Document</title>	
-	<link rel="stylesheet" href="http://static.sldlcdn.com/resource/shuangshier/css/reset/reset.css">	
+	<link rel="stylesheet" href="http://static.sldlcdn.com/resource/shuangshier/css/reset/reset.css">
 	<!-- 引入样式 -->
 	<link rel="stylesheet" href="http://static.sldlcdn.com/resource/shuangshier/css/reset/mint.css">
-	<link rel="stylesheet" href="../css/affirm.min.css">
+	<link rel="stylesheet" href="../css/ddlist.min.css">
 </head>
 <body>
-	<div id="affirm">
-		<!-- 收货地址 -->
-		<a href="../html/goodssite.html">
-			<div class="site">
-				<img src="../images/收货地址.png" class="shdz">
-				<span class="sitewz">请添加您的收货地址</span>
-				<img src="../images/icon-ri.png" class="iconr">
-			</div>
-		</a>
-			
-		<!-- 中间内容 -->
+	<div id="ddlist">
+		<!-- 顶部 -->
+		<div class="title">
+			<div class="li bluebott">全部</div>
+			<div class="li">待发货</div>
+			<div class="li">待收货</div>
+			<div class="li bluebott">交易成功</div>
+		</div>
+		<!-- 内容部分 -->
 		<div class="affcon">
 			<div class="affcont">
 				<img src="" class="afftp">
@@ -33,16 +31,25 @@
 				</div>
 			</div>
 			<div class="affgj">
-				共计1减商品 合计:￥398（包邮）
+				<p class="affgjp">共计1减商品 合计:￥398（包邮）</p>
+			</div>
+			<!-- 退货的几个按钮 -->
+			<div class="quitbutton">			
+				<div class="goodsbutt">物流</div>
+				<div class="goodsbutt">确认收货</div>
+				<div class="goodsbutt">退货退款</div>
+			</div>
+			<!-- 右上角显示状态 -->
+			<div class="state">
+				<!-- <img src="../images/jycg.png" class="zt"> -->
+				<!-- <img src="../images/fahuo.png" class="zt"> -->
+				<img src="../images/yfk.png" class="zt">
 			</div>
 		</div>
-		<!-- 底部按钮 -->		 	
-		<div class="qrbut">确认支付</div>
-		
 	</div>
 </body>
-<script src="../static/polyfill.min.js"></script>
 <script src="http://static.sldlcdn.com/resource/script/flexible.js"></script>
+<script src="../static/polyfill.min.js"></script>
 <script src="http://static.sldlcdn.com/resource/shuangshier/js/lib/vue.js"></script>
 <!-- 引入组件库 -->
 <script src="https://static.sldlcdn.com/resource/shuangshier/js/lib/mint.js"></script>
@@ -57,6 +64,6 @@
 		    
 		  }
 	})
-	vm.$mount('#affirm')
+	vm.$mount('#ddlist')
 </script>
 </html>
