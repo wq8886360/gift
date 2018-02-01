@@ -13,7 +13,10 @@ var vm = new Vue({
 			setling:'',
 			setled:'',
 			pin:'',
-			wskey:''
+			wskey:'',
+
+
+			msg:{}
 		}
 	},
 	methods: {
@@ -22,19 +25,17 @@ var vm = new Vue({
 	    },
 	    interface:function() {
 	    	// let url = "http://www.plus.com/index.php?m=Api&c=Plus&a=plusDetail&pin=" + this.pin + '&wskey='  +this.wskey;
-	    	let url = 'http://www.plus.com/index.php?m=Api&c=Plus&a=plusDetail?=11009'
+	    	let url = 'http://www.pluss.com/mobile.php?act=plus&op=plusList&pin=11009'
 	    	axios.get(url).then(response => {
-	    		this.datadre = response.data;
-	    		this.name = this.datadre.plus_info;
-	    		this.sell = this.datadre.plus_grow.sellerdata
-	    		this.pro  = this.datadre.plus_grow.progress 	    		
-	    		this.value2=this.pro.level
-	    		this.setling=this.datadre.plus_equity.settling_money
-	    		this.setled=this.datadre.plus_equity.settled_money
-	    		// this.equity=this.datadre.plus_equity
-	    		console.log(response);
-	    		// console.log(this.sell)
+	    		this.msg = response.data.msg
+	    		// this.widx.style.width = this.msg.plus_gift.length*2.98 + 'rem'
+	    		console.log(this.msg);
+	    		// console.log(this.msg.plus_gift.length)
+
 	    	});
+	    },
+	    giftlist:function(){
+
 	    },
 	    tishi:function(){
 	    		this.equity=this.datadre.plus_equity
@@ -57,6 +58,8 @@ var vm = new Vue({
 	    }
 	    this.pin = GetQueryString("pin")
 	    this.wskey = GetQueryString("wskey")
+
+	    // this.widx = this.$refs.widx
 
 		this.interface()
 	}

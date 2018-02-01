@@ -17,14 +17,16 @@
 	  <div class="merber-car">
 	  	<div class="mercartitle">
 	  		<span class="qinaide">亲爱的</span>
-	  		<span class="mercarname">金色鲤鱼小姐</span>
+	  		<span class="mercarname">{{equ.name}}</span>
 	  	</div>
-		<!-- <div class="mercarxinxi">
-			<div class="mercartoux"></div>
+		<div class="mercarxinxi" v-if="buyid == 1">
+			<div class="mercartoux">
+				<img :src="equ.head_img">
+			</div>
 			<p class="mercarkt">您已经成功开通Plus会员</p>
-			<p class="mercartime">有效期：2019-6-27</p>
-		</div> -->
-		<div class="mercarNo">
+			<p class="mercartime">有效期：{{equ.createtime}}</p>
+		</div>
+		<div class="mercarNo" v-if="buyid == 0">
 			您未开通Plus会员不能享受以下权益。
 		</div>
 	  </div>

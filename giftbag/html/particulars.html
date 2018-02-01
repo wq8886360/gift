@@ -21,19 +21,19 @@
 		</div>
 		<div class="line"></div>
 		<!-- 梦想礼包 -->
+		<a href="../html/baglist.html">
+			<div class="dreatitle">
+				<span class="dreatt">梦天礼包</span>
+				<img src="../images/icon-ri.png" class="dreatr">
+			</div>
+		</a>
 		<div class="dreambag">
-			<a href="../html/baglist.html">
-				<div class="dreatitle">
-					<span class="dreatt">梦天礼包</span>
-					<img src="../images/icon-ri.png" class="dreatr">
-				</div>
-			</a>	
 			<div class="dreamcont">
 				<a href="../html/bagdet.html">
-					<div class="dreamxq">
-						<img src="../images/img_huodong@2x.png" class="dreamxm">
-						<p class="dreamwz">礼包名称包大礼654548545</p>
-						<p class="dreamma">￥666</p>
+					<div class="dreamxq" v-for="(item,index) in msg.plus_gift" :key="index" ref="widx">
+						<img :src="item.img" class="dreamxm">
+						<p class="dreamwz">{{item.title}}</p>
+						<p class="dreamma">￥{{item.price}}</p>
 					</div>
 				</a>
 				

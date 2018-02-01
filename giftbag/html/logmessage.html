@@ -44,7 +44,7 @@
 		 		</div>
 		 		<!-- 右边物流位置 -->
 		 		<div class="location">
-		 			<div class="locamesbl">
+		 			<div class="locamesbl" ref="hei">
 			 			<p class="locames blue">【杭州市】已签收，签收人是本人感谢使用申通快递，期待再次为您服务！
 			 			</p>
 			 			<div class="locmestime">
@@ -52,16 +52,16 @@
 			 			</div>
 			 		</div>
  		 			<div class="locamesbl">
- 			 			<p class="locames blue">【杭州市】浙江杭州滨江西兴公司派件员：王小二 18563245632 正在为您派件。为保证您及时收到宝贝，请保持电话通畅。
+ 			 			<p class="locames blue" ref="heit">【杭州市】
  			 			</p>
  			 			<div class="locmestime">
  			 				2017-07-11 19:30
  			 			</div>
- 			 		</div>
+ 			 		</div> 
  		 			<div class="locamesbl">
  			 			<p class="locames blue">【杭州市】已签收，签收人是本人感谢使用申通快递，期待再次为您服务！
  			 			</p>
- 			 			<div class="locmestime">
+ 			 			<div class="locmestime"> 
  			 				2017-07-11 19:30
  			 			</div>
  			 		</div>
@@ -83,8 +83,19 @@
 			}
 		},
 		methods: {
-		    
-		  }
+			ceshi(){
+				this.$nextTick(function(){
+					let offhei = this.$refs.hei.offsetHeight
+					let offheit= this.$refs.hei.offsetHeight
+					console.log(666)
+					console.log(offhei)
+					console.log(offheit)
+				})
+			}
+		  },
+		mounted () {
+			this.ceshi()
+		}
 	})
 	vm.$mount('#logmessage')
 </script>

@@ -12,35 +12,21 @@
 <body>
 	<div id="baglist">
 		 <div class="dreambag">
-		 	<a href="../html/bagdet.html">
-		 		<div class="dreamcont">
-			 		<div class="dreamxq">
-			 			<img src="../images/img_huodong@2x.png" class="dreamxm">
-			 			<p class="dreamwz">礼包名称包大礼654548545</p>
-			 			<p class="dreamma">￥666</p>
-			 		</div>
-			 	</div>
-		 	</a>
-			 	
+	 		<div class="dreamcont" v-for="(item,index) in msg.item" :key="index" @click="baglist(item.id)">
+		 		<div class="dreamxq">
+		 			<img :src="item.img" class="dreamxm">
+		 			<p class="dreamwz">{{item.title}}</p>
+		 			<p class="dreamma">￥{{item.price}}</p> 
+		 		</div>
+		 	</div>			 	
 		 </div>
 	</div>
 </body>
 <script src="http://static.sldlcdn.com/resource/script/flexible.js"></script>
 <script src="../static/polyfill.min.js"></script>
 <script src="http://static.sldlcdn.com/resource/shuangshier/js/lib/vue.js"></script>
+<script src="../static/axios.min.js"></script>
 <!-- 引入组件库 -->
 <script src="https://static.sldlcdn.com/resource/shuangshier/js/lib/mint.js"></script>
-<script>
-	var vm = new Vue({
-		data:function (){
-			return {				
-				
-			}
-		},
-		methods: {
-		    
-		  }
-	})
-	vm.$mount('#baglist')
-</script>
+<script src="../js/min/baglist.min.js"></script>
 </html>

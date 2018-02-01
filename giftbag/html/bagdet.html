@@ -12,47 +12,32 @@
 <body>
 	<div id="bagdet">
 		<div class="bagcon">
-			<img src="" class="bagconimg">
+			<img :src="msg.img" class="bagconimg">
 			<div class="bagzx">
-				<p>BRITA碧然德女西裤 Marella金典系列3.5L宝石红色 法国经典款包邮</p>
+				<p>{{msg.title}}</p>
 				<div class="meney">
 					<div class="qian">￥
-						<span class="bgm">980</span>
+						<span class="bgm">{{msg.price}}</span>
 					</div>
 					<div class="scj">市场价 : 
-						<del>￥1180.6</del>				
+						<del>￥{{msg.market_price}}</del>				
 					</div>
 				</div>
 			</div>
 		</div>
 		<!-- 中间图片 -->
-		<div class="tp"></div>
-		<div class="tp"></div>
-		<div class="tp"></div>
-		<div class="tp"></div>
-		<!-- 底部按钮  -->
-		<a href="../html/affirm.html">
-			<div class="buy">立即购买</div>
-		</a>
+		<!-- <div class="tp"></div> -->
+		<!-- 底部按钮  -->		
+		<div class="buy" @click="buy">立即购买</div>
+		
 			
 	</div>
 </body>
 <script src="http://static.sldlcdn.com/resource/script/flexible.js"></script>
 <script src="../static/polyfill.min.js"></script>
 <script src="http://static.sldlcdn.com/resource/shuangshier/js/lib/vue.js"></script>
+<script src="../static/axios.min.js"></script>
 <!-- 引入组件库 -->
 <script src="https://static.sldlcdn.com/resource/shuangshier/js/lib/mint.js"></script>
-<script>
-	var vm = new Vue({
-		data:function (){
-			return {				
-				
-			}
-		},
-		methods: {
-		    
-		  }
-	})
-	vm.$mount('#bagdet')
-</script>
+<script src="../js/min/bagdet.min.js"></script>
 </html>

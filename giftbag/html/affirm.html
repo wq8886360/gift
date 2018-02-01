@@ -25,15 +25,15 @@
 			<div class="affcont">
 				<img src="" class="afftp">
 				<div class="addconr">
-					<p class="affwz">浙江温州皮革厂哈哈哈哈好哒互道金卡戴珊我回复奥斯广佛哈哈哈好哒互道金卡戴珊我回复奥斯广佛</p>
+					<p class="affwz">{{msg.title}}</p>
 					<div class="affmen">
-						<div class="affmy">￥<span class="affmeble">638</span></div>
+						<div class="affmy">￥<span class="affmeble">{{msg.market_price}}</span></div>
 						<div class="affch">x1</div>
 					</div>
 				</div>
 			</div>
 			<div class="affgj">
-				共计1减商品 合计:￥398（包邮）
+				共计1减商品 合计:￥{{msg.price}}（包邮）
 			</div>
 		</div>
 		<!-- 底部按钮 -->		 	
@@ -44,19 +44,8 @@
 <script src="../static/polyfill.min.js"></script>
 <script src="http://static.sldlcdn.com/resource/script/flexible.js"></script>
 <script src="http://static.sldlcdn.com/resource/shuangshier/js/lib/vue.js"></script>
+<script src="../static/axios.min.js"></script>
 <!-- 引入组件库 -->
 <script src="https://static.sldlcdn.com/resource/shuangshier/js/lib/mint.js"></script>
-<script>
-	var vm = new Vue({
-		data:function (){
-			return {				
-				
-			}
-		},
-		methods: {
-		    
-		  }
-	})
-	vm.$mount('#affirm')
-</script>
+<script src="../js/min/affirm.min.js"></script>
 </html>

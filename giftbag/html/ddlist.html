@@ -13,37 +13,40 @@
 	<div id="ddlist">
 		<!-- 顶部 -->
 		<div class="title">
-			<div class="li bluebott">全部</div>
-			<div class="li">待发货</div>
-			<div class="li">待收货</div>
-			<div class="li bluebott">交易成功</div>
+			<div :class="{li:true, bluebott:active == ''}" @click="titlezt()">全部</div>
+			<div :class="{li:true, bluebott:active == 1}" @click="titlezt(1)">待发货</div>
+			<div :class="{li:true, bluebott:active == 2}" @click="titlezt(2)">待收货</div>
+			<div :class="{li:true, bluebott:active == 3}" @click="titlezt(3)">交易成功</div>
 		</div>
 		<!-- 内容部分 -->
-		<div class="affcon">
+		<div class="affcon" v-for="(item,index) in msg" :key="index">
 			<div class="affcont">
-				<img src="" class="afftp">
+				<img :src="item.img" class="afftp">
 				<div class="addconr">
-					<p class="affwz">浙江温州皮革厂哈哈哈哈好哒互道金卡戴珊我回复奥斯广佛哈哈哈好哒互道金卡戴珊我回复奥斯广佛</p>
+					<p class="affwz">{{item.title}}</p>
 					<div class="affmen">
-						<div class="affmy">￥<span class="affmeble">638</span></div>
-						<div class="affch">x1</div>
+						<div class="affmy">￥<span class="affmeble">{{item.gift_price}}</span></div>
+						<div class="affch">x{{item.num}}</div>
 					</div>
 				</div>
 			</div>
 			<div class="affgj">
-				<p class="affgjp">共计1减商品 合计:￥398（包邮）</p>
+				<p class="affgjp">共计1件商品 合计:￥{{item.order_price}}（包邮）</p>
 			</div>
 			<!-- 退货的几个按钮 -->
-			<div class="quitbutton">			
-				<div class="goodsbutt">物流</div>
-				<div class="goodsbutt">确认收货</div>
-				<div class="goodsbutt">退货退款</div>
+			<div class="quitbutton" v-if="item.status == 2">	
+				<div class="goodsbutt" @click="wuliu">物流</div>
+				<div class="goodsbutt" @click="qrsh(item.ordersn)">确认收货</div>
+				<div class="goodsbutt" @click="tkth(item.ordersn)">退货退款</div>
+			</div>
+			<div class="quitbutton" v-if="item.status == 3">
+				<div class="goodsbutt" @click="tkth(item.ordersn)">退货退款</div>
 			</div>
 			<!-- 右上角显示状态 -->
 			<div class="state">
-				<!-- <img src="../images/jycg.png" class="zt"> -->
-				<!-- <img src="../images/fahuo.png" class="zt"> -->
-				<img src="../images/yfk.png" class="zt">
+				<img src="../images/jycg.png" class="zt" v-if="item.status == 3">
+				<img src="../images/fahuo.png" class="zt" v-if="item.status == 2">
+				<img src="../images/yfk.png" class="zt" v-if="item.status == 1">
 			</div>
 		</div>
 	</div>
@@ -51,19 +54,8 @@
 <script src="http://static.sldlcdn.com/resource/script/flexible.js"></script>
 <script src="../static/polyfill.min.js"></script>
 <script src="http://static.sldlcdn.com/resource/shuangshier/js/lib/vue.js"></script>
+<script src="../static/axios.min.js"></script>
 <!-- 引入组件库 -->
 <script src="https://static.sldlcdn.com/resource/shuangshier/js/lib/mint.js"></script>
-<script>
-	var vm = new Vue({
-		data:function (){
-			return {				
-				
-			}
-		},
-		methods: {
-		    
-		  }
-	})
-	vm.$mount('#ddlist')
-</script>
+<script src="../js/min/ddlist.min.js"></script>
 </html>

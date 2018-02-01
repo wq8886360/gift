@@ -1,24 +1,22 @@
-.yearcon {
-	width: 100%;
-	height: 3.85rem;
-	position: relative;
-	.yearbg {
+#particulars {
+	.yearcon {
 		width: 100%;
-		height: 100%;
+		height: 3.85rem;
+		position: relative;
+		.yearbg {
+			width: 100%;
+			height: 100%;
+		}
+		.ddlb {
+			position: absolute;
+			top:0.29rem;
+			right: 0.27rem;
+			width: 2.43rem;
+			height: 0.53rem;
+		}
 	}
-	.ddlb {
-		position: absolute;
-		top:0.29rem;
-		right: 0.27rem;
-		width: 2.43rem;
-		height: 0.53rem;
-	}
-}
-/* 梦想礼包 */
-.dreambag {
-	box-sizing: border-box;
-	padding: 0 0.16rem;
-	border-bottom: 0.01rem solid #F4F4F4;
+	/* 梦想礼包 */
+
 	.dreatitle {
 		padding: 0.35rem 0.11rem;
 		overflow: hidden;
@@ -36,237 +34,244 @@
 			padding-top: 0.06rem;
 		}
 	}
-	.dreamcont {
+	.dreambag {
 		box-sizing: border-box;
-		padding: 0.32rem 0 0.48rem;
-		overflow: hidden;
-		.dreamxq {
-			width: 3rem;
-			height: 4.07rem;
-			margin: 0 0.11rem;
-			border: 0.01rem solid #EEEEEE;
-			float: left;
-			.dreamxm {
-				width: 100%;
-				height: 3rem;
-				background-color: green;
-			}
-			.dreamwz {
-				width: 100%;
-				box-sizing: border-box;
-				font-size: 0.32rem;
-				padding: 0 0.08rem;
-				overflow: hidden;
-				text-overflow: ellipsis; 
-				white-space: nowrap;
-			}
-			.dreamma {
-				color: #048BFE;
-				font-size: 0.32rem;
+		padding: 0 0.16rem;
+		border-bottom: 0.01rem solid #F4F4F4;
+		overflow-x: scroll;
+		.dreamcont {
+			box-sizing: border-box;
+			padding: 0.32rem 0 0.48rem;
+			width: 13.33rem;
+			.dreamxq {
+				width: 2.98rem;
+				height: 4.07rem;
+				margin: 0 0.11rem;
+				border: 0.01rem solid #EEEEEE;
+				float: left;
+				.dreamxm {
+					width: 100%;
+					height: 3rem;
+					background-color: green;
+				}
+				.dreamwz {
+					width: 100%;
+					box-sizing: border-box;
+					font-size: 0.32rem;
+					padding: 0 0.08rem;
+					overflow: hidden;
+					text-overflow: ellipsis; 
+					white-space: nowrap;
+				}
+				.dreamma {
+					color: #048BFE;
+					font-size: 0.32rem;
+				}
 			}
 		}
 	}
-}
-/*用户信息	*/
-.user-message {
-	box-sizing: border-box;
-	padding: 0.48rem 0.27rem;
-	overflow: hidden;
-}
-.head-portrait {
-	width: 1.55rem;
-	height: 1.55rem;
-	background-color: yellow;
-	border-radius: 50%;
-	float: left;
-
-	.head-img {
-		width: 100%;
-		height: 100%; 
+	/*用户信息	*/
+	.user-message {
+		box-sizing: border-box;
+		padding: 0.48rem 0.27rem;
+		overflow: hidden;
 	}
-}
-.user {
-	margin: 0.35rem 0 0 0.37rem;
-	float: left;
-}
-.user-name {
-	font-size: 0.37rem;
-}
-.buytime {
-	margin-top: 0.21rem;
-	font-size: 0.29rem;
-	color: #aaa;
-}
-.line {
-	width: 100%;
-	height: 0.27rem;
-	background-color: #F7F7F7;
-}
-/* 会员收益 */
-.earnings {
-	overflow: hidden;
-	box-sizing: border-box;
-	padding: 0.43rem 0.27rem;
-	border-bottom: 1px solid #F7F7F7;
-	overflow: hidden;
-}
-.earnings .earn {
-	font-size: 0.37rem;
-	border-left: 0.05rem solid #30D3AF;
-	padding-left: 0.21rem;
-}
-.estimate {
-	position: relative;
-}
-.estimate .el-tabs__item {
-	width: 5.0rem;
-	height: 0.8rem;
-	margin: 0;
-	padding: 0;
-	text-align: center;
-	line-height: 0.93rem;
-	font-size: 0.35rem;
-}
+	.head-portrait {
+		width: 1.55rem;
+		height: 1.55rem;
+		background-color: yellow;
+		border-radius: 50%;
+		float: left;
 
-.estimate .el-tabs__item:hover {
-	color: #30D3AF;
-}
-.estimate .el-tabs__active-bar {
-	background-color: #30D3AF;
-	width: 5.0rem; 
-}
-.estimate .el-tabs__item.is-active {
-	color: #30D3AF;
-}
-/* 可提现 */
-.estimate .tab {
-	box-sizing: border-box;
-	overflow: hidden;
-	// padding: 0.29rem 0;
-}
-.tab .yugu {
-	float: left;
-	width: 50%;
-	text-align: center;
-	border-bottom: 0.01rem solid #F7F7F7;
-	padding: 0.29rem 0;
-}
-.tab .ketixian {
-	float: right;
-	width: 50%;
-	text-align: center;
-	border-bottom: 0.01rem solid #F7F7F7;
-	padding: 0.29rem 0;
-}
-.active {
-	color: #30D3AF;
-	border-bottom: 0.01rem solid #30D3AF !important;
-}
-.tabtwo	{
-	width: 100%;
-	height: 3.8rem;
-	overflow: hidden;
-	text-align: center;
-}
+		.head-img {
+			width: 100%;
+			height: 100%; 
+		}
+	}
+	.user {
+		margin: 0.35rem 0 0 0.37rem;
+		float: left;
+	}
+	.user-name {
+		font-size: 0.37rem;
+	}
+	.buytime {
+		margin-top: 0.21rem;
+		font-size: 0.29rem;
+		color: #aaa;
+	}
+	.line {
+		width: 100%;
+		height: 0.27rem;
+		background-color: #F7F7F7;
+	}
+	/* 会员收益 */
+	.earnings {
+		overflow: hidden;
+		box-sizing: border-box;
+		padding: 0.43rem 0.27rem;
+		border-bottom: 1px solid #F7F7F7;
+		overflow: hidden;
+	}
+	.earnings .earn {
+		font-size: 0.37rem;
+		border-left: 0.05rem solid #30D3AF;
+		padding-left: 0.21rem;
+	}
+	.estimate {
+		position: relative;
+	}
+	.estimate .el-tabs__item {
+		width: 5.0rem;
+		height: 0.8rem;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+		line-height: 0.93rem;
+		font-size: 0.35rem;
+	}
 
-.estimate .estirmoney {
-	font-size: 0.7rem;
-	margin-top: 0.61rem;
-}
-.estimate .estdetail {
-	margin-top: 0.17rem;
-	font-size: 0.32rem;
-	color: #858585;
-}
-.estimate .esimg {
-	width: 0.31rem;
-	height: 0.31rem;
-	margin-right: 0.08rem;
-}
-.estimate .estirdop {	
-	width: 3.43rem;
-	height: 0.75rem;
-	line-height: 0.5;
-	margin-top: 0.33rem;
-	background-color: #30D3AF;
-	border-radius: 1.6rem;
-	font-size: 0.3rem;
-}
-/* 提示框 */
-.tiimg {
-	position: absolute;
-	top: 32%;
-	left: 25%;
-	// display: none; 
-	
-}
-.tanimg {
-		width: 4.92rem;
-		height: 3.32rem;
-}
-/* 会员成长 */
-.earnup {
-	border-left: 0.05rem solid #3FB2FF;
-	font-size: 0.37rem;
-	padding-left: 0.12rem;
-}
-.up .upshop {
-	box-sizing: border-box;
-	margin-top: 0.95rem;
-	padding: 0 0.27rem;
-}
-.upshop .block .mt-range-thumb {
-	width: 0.43rem;
-	height: 0.43rem;
-	top: 50%;
-	margin-top: -0.21rem;
-	background-color: #3BB0FF;
-}
-.mt-range-runway{
-	border-top: 0.08rem solid #F3F3F3!important;
-	border-radius: 0.66rem !important;
-}
-.mt-range-progress{
-	border-top: 0.08rem solid #3BB0FF!important;
-	border-radius: 0.66rem !important;
-}
-.upjinpai {
-	margin-top: 0.23rem;
-	font-size: 0.32rem;
-	overflow: hidden;
-}
-.upjinpai .jinleft {
-	float: left;
-}
-.upjinpai .jinright {
-	float: right;
-}
-.up .hint {
-	margin-top: 0.72rem;
-	padding: 0.37rem 0.27rem;
-	border-top: 1px solid #F7F7F7;
-	font-size: 0.29rem;
-	color: #555;
-}
-/* 金牌小点数 */
-.number {
-	overflow: hidden;
-}
-.number li{
-	width: 100%;
-	box-sizing: border-box;
-	padding: 0.43rem 0.27rem;
-	border-bottom: 0.01rem solid #F7F7F7;
-}
-.number .numname {
-	border-right: 0.01rem solid #F7F7F7;
-	padding-right: 0.27rem;
-}
-.number .num {
-	margin-left: 0.27rem;
-}
+	.estimate .el-tabs__item:hover {
+		color: #30D3AF;
+	}
+	.estimate .el-tabs__active-bar {
+		background-color: #30D3AF;
+		width: 5.0rem; 
+	}
+	.estimate .el-tabs__item.is-active {
+		color: #30D3AF;
+	}
+	/* 可提现 */
+	.estimate .tab {
+		box-sizing: border-box;
+		overflow: hidden;
+		// padding: 0.29rem 0;
+	}
+	.tab .yugu {
+		float: left;
+		width: 50%;
+		text-align: center;
+		border-bottom: 0.01rem solid #F7F7F7;
+		padding: 0.29rem 0;
+	}
+	.tab .ketixian {
+		float: right;
+		width: 50%;
+		text-align: center;
+		border-bottom: 0.01rem solid #F7F7F7;
+		padding: 0.29rem 0;
+	}
+	.active {
+		color: #30D3AF;
+		border-bottom: 0.01rem solid #30D3AF !important;
+	}
+	.tabtwo	{
+		width: 100%;
+		height: 3.8rem;
+		overflow: hidden;
+		text-align: center;
+	}
 
-/* 颜色 */
-.hintred {
-	color: #FB0036;
+	.estimate .estirmoney {
+		font-size: 0.7rem;
+		margin-top: 0.61rem;
+	}
+	.estimate .estdetail {
+		margin-top: 0.17rem;
+		font-size: 0.32rem;
+		color: #858585;
+	}
+	.estimate .esimg {
+		width: 0.31rem;
+		height: 0.31rem;
+		margin-right: 0.08rem;
+	}
+	.estimate .estirdop {	
+		width: 3.43rem;
+		height: 0.75rem;
+		line-height: 0.5;
+		margin-top: 0.33rem;
+		background-color: #30D3AF;
+		border-radius: 1.6rem;
+		font-size: 0.3rem;
+	}
+	/* 提示框 */
+	.tiimg {
+		position: absolute;
+		top: 32%;
+		left: 25%;
+		// display: none; 
+		
+	}
+	.tanimg {
+			width: 4.92rem;
+			height: 3.32rem;
+	}
+	/* 会员成长 */
+	.earnup {
+		border-left: 0.05rem solid #3FB2FF;
+		font-size: 0.37rem;
+		padding-left: 0.12rem;
+	}
+	.up .upshop {
+		box-sizing: border-box;
+		margin-top: 0.95rem;
+		padding: 0 0.27rem;
+	}
+	.upshop .block .mt-range-thumb {
+		width: 0.43rem;
+		height: 0.43rem;
+		top: 50%;
+		margin-top: -0.21rem;
+		background-color: #3BB0FF;
+	}
+	.mt-range-runway{
+		border-top: 0.08rem solid #F3F3F3!important;
+		border-radius: 0.66rem !important;
+	}
+	.mt-range-progress{
+		border-top: 0.08rem solid #3BB0FF!important;
+		border-radius: 0.66rem !important;
+	}
+	.upjinpai {
+		margin-top: 0.23rem;
+		font-size: 0.32rem;
+		overflow: hidden;
+	}
+	.upjinpai .jinleft {
+		float: left;
+	}
+	.upjinpai .jinright {
+		float: right;
+	}
+	.up .hint {
+		margin-top: 0.72rem;
+		padding: 0.37rem 0.27rem;
+		border-top: 1px solid #F7F7F7;
+		font-size: 0.29rem;
+		color: #555;
+	}
+	/* 金牌小点数 */
+	.number {
+		overflow: hidden;
+	}
+	.number li{
+		width: 100%;
+		box-sizing: border-box;
+		padding: 0.43rem 0.27rem;
+		border-bottom: 0.01rem solid #F7F7F7;
+	}
+	.number .numname {
+		border-right: 0.01rem solid #F7F7F7;
+		padding-right: 0.27rem;
+	}
+	.number .num {
+		margin-left: 0.27rem;
+	}
+
+	/* 颜色 */
+	.hintred {
+		color: #FB0036;
+	}
+
 }

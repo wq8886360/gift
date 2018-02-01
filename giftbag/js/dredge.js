@@ -26,13 +26,16 @@ var vm = new Vue({
 	    		this.wskey = this.datadre.wskey
 	    		this.equ = this.datadre.plus_equity
 	    		this.shopid = this.datadre.shopid
+	    		this.buyid = this.datadre.plus_equity.is_buy 
 	    		// console.log(this.equ.is_buy)
 	    		// console.log(this.pin)    		
     			console.log(this.datadre);
+    			// console.log(this.buyid)
   				})		 
 	    },
 	    Toast:function(){	
 	    	this.buyid = this.datadre.plus_equity.is_buy 
+	    	console.log(this.buyid)
 	    	if(this.buyid == 1){
 	    		window.location.href = 'slmall://kefu?itemId=' + this.kefu.img_id
 	    	}
