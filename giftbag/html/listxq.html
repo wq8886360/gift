@@ -10,61 +10,67 @@
 	<link rel="stylesheet" href="../css/listxq.min.css">
 </head>
 <body>
-	<div id="listxq">
+	<div id="listxq" v-if='msg_data'>
 		<!-- 收货信息 -->
 		<div class="title">
 			<img src="../images/收货地址.png" class="dz">
 			<div class="titlexx">
-				<p class="name">收货人 : 孙悟空 18633547716</p>
-				<p class="address">在宇宙中地球上的中国花果山水帘洞二期66楼</p>
+				<p class="name">收货人 : {{msg_data.name}} {{msg_data.mobile}}</p>
+				<p class="address">{{msg_data.address}}</p>
 			</div>
 		</div>
 		<!-- 订单内容 -->
 		<div class="affcon">
-			<div class="ddh"><strong class="ddhblack">订单号 : </strong>AC5445665654545</div>
+			<div class="ddh"><strong class="ddhblack">订单号 : </strong>{{msg_data.ordersn}}</div>
 			<div class="affcont">
-				<img src="" class="afftp">
+				<img :src="msg_data.img" class="afftp">
 				<div class="addconr">
-					<p class="affwz">浙江温州皮革厂哈哈哈哈好哒互道金卡戴珊我回复奥斯广佛哈哈哈好哒互道金卡戴珊我回复奥斯广佛</p>
+					<p class="affwz">{{msg_data.title}}</p>
 					<div class="affmen">
-						<div class="affmy">￥<span class="affmeble">638</span></div>
-						<div class="affch">x1</div>
+						<div class="affmy">￥<span class="affmeble">{{msg_data.gift_price}}</span></div>
+						<div class="affch">x{{msg_data.num}}</div>
 					</div>
 				</div>
 			</div>		
 		</div>
 		<!-- 实付款 -->
 		<div class="realmoney">
-			<div class="sfk"><strong class="sfkl">实付款</strong><div class="sfkr">￥<span>638</span></div></div>
-			<div class="sfkh">支付方式 ：支付宝</div>
-			<div class="sfkh">下单时间 ：2018-1-26 13:46:22</div>
+			<div class="sfk"><strong class="sfkl">实付款</strong><div class="sfkr">￥<span>{{msg_data.order_price}}</span></div></div>
+			<div class="sfkh">支付方式 : {{msg_data.pay_method}}</div>
+			<div class="sfkh">下单时间 ：{{msg_data.create_time}}</div>
 		</div>
 		<!-- 退货的几个按钮 -->
 		<div class="quitbutton">
-			<a href="../html/logmessage.html">
+			<a @click='loglist()'>
 				<div class="goodsbutt">物流</div>
 			</a>				
-			<div class="goodsbutt">确认收货</div>
-			<div class="goodsbutt">退货退款</div>
+			<div @click='mask_state=true,shou_state=true ' class="goodsbutt">确认收货</div>
+			<div @click='mask_state=true,sure_state=true ' class="goodsbutt">退货退款</div>
+		</div>
+		<div class="mask" v-if='mask_state'>
+			<div class="refund" v-if='sure_state'>
+				<div class="titlett">是否确认退换退款？</div>
+				<div class="btn_all">
+					<span @click='sure_sure' style="border-right:1px solid #E5E5E5" class="btn_left">确定</span>
+					<span  @click='mask_state=false,sure_state=false ' class="btn_right">取消</span>
+				</div>
+			</div>
+			<div class="goods_s" v-if='shou_state'>
+				<div class="titlett">是否确认收货？</div>
+				<div class="btn_all">
+					<span @click='sure_que' style="border-right:1px solid #E5E5E5" class="btn_left">确定</span>
+					<span  @click='mask_state=false,shou_state=false'  class="btn_right">取消</span>
+				</div>
+			</div>
 		</div>
 	</div>
 </body>
 <script src="http://static.sldlcdn.com/resource/script/flexible.js"></script>
 <script src="../static/polyfill.min.js"></script>
 <script src="http://static.sldlcdn.com/resource/shuangshier/js/lib/vue.js"></script>
+<script src="../static/axios.min.js"></script>
+<script src='../js/min/listxq.min.js'></script>
 <!-- 引入组件库 -->
 <script src="https://static.sldlcdn.com/resource/shuangshier/js/lib/mint.js"></script>
-<script>
-	var vm = new Vue({
-		data:function (){
-			return {				
-				
-			}
-		},
-		methods: {
-		    
-		  }
-	})
-	vm.$mount('#listxq')
-</script>
+
 </html>

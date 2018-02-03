@@ -28,15 +28,12 @@
 			</div>
 		</a>
 		<div class="dreambag">
-			<div class="dreamcont">
-				<a href="../html/bagdet.html">
-					<div class="dreamxq" v-for="(item,index) in msg.plus_gift" :key="index" ref="widx">
-						<img :src="item.img" class="dreamxm">
-						<p class="dreamwz">{{item.title}}</p>
-						<p class="dreamma">￥{{item.price}}</p>
-					</div>
-				</a>
-				
+			<div class="dreamcont" :style="{width:widt*3.3+'rem'}">
+				<div class="dreamxq" v-for="(item,index) in msg.plus_gift" :key="index" ref="widx" @click="baoxq(item.id)">
+					<img :src="item.img" class="dreamxm">
+					<p class="dreamwz">{{item.title}}</p>
+					<p class="dreamma">￥{{item.price}}</p>
+				</div>			
 			</div>
 		</div>
 		<!-- 用户信息 --> 
@@ -52,7 +49,7 @@
 		<div class="line"></div>
 		<!-- 会员收益 -->
 		<div class="earnings">
-			<span class="earn">{{equity.title}}</span>
+			<span class="earn">Plus会员收益</span>
 		</div>
 		<!-- 预估提现 -->
 		<div class="estimate">
@@ -62,13 +59,13 @@
 			</div>
 			<div class="tabtwo">
 				<div class="tableft"  v-if="index == 0">
-					<p class="estirmoney">{{setling}}</p>
+					<p class="estirmoney">{{seet}}</p>
 					<a href="../html/estimate.html">
 						<mt-button type="primary" class="estirdop">明细</mt-button>
 					</a>		
 				</div>
 				<div class="tabright"  v-else>
-					<p class="estirmoney">20000</p>{{setled}}
+					<p class="estirmoney">{{msg.plus_equity.settled_money}}</p>
 					<a href="../html/detail.html">
 						<p class="estdetail"><img src="../images/icon_mingxi@2x.png" class="esimg">提现明细</p>
 					</a>	
@@ -78,10 +75,10 @@
 				</div>
 			</div>
 			<!-- 弹出提示 -->
-			<div class="tiimg">
+<!-- 			<div class="tiimg">
 				<img src="../images/tishi.png" class="tanimg animated fadeIn" v-if="equity.settled_money >= 100">
 				<img src="../images/zuidiedu.png" class="tanimg animated fadeIn" v-if="equity.settled_money < 100">
-			</div>
+			</div> -->
 		</div>
 		<div class="line"></div>
 		<!-- 会员成长 -->
@@ -91,17 +88,16 @@
 			</div>
 			<div class="upshop">
 				<div class="block">
-				  <!-- <el-slider v-model="value2"></el-slider> -->
 				  <mt-range v-model="value2"></mt-range>
 				  <div class="upjinpai">
-				  	<span class="jinleft">{{pro.start}}</span>
-				  	<span class="jinright">{{pro.end}}</span>
+				  	<span class="jinleft">{{gorwinfo.start}}</span>
+				  	<span class="jinright">{{gorwinfo.end}}</span>
 				  </div>
 				</div>
 			</div>
 			<!-- 提示 -->
 			<div class="hint">
-				提示：还差<span class="hintred">{{pro.tip1}}个直推</span>金牌小店和<span class="hintred">{{pro.tip2}}</span>个社群金牌小店
+				提示：还差<span class="hintred">{{gorwinfo.tip1}}个直推</span>金牌小店和<span class="hintred">{{gorwinfo.tip2}}</span>个社群金牌小店
 				<!-- 和800元小店销售额和2个订单升级到钻石小店 -->
 			</div>
 		</div>
@@ -109,9 +105,9 @@
 		<!-- 直推金牌小点数 -->
 		<div class="number">
 			<ul>
-				<li v-for="(item,index) in sell" :key="index">
+				<li v-for="(item,index) in gorwitem" :key="index">
 					<span class="numname">{{item.title}}</span>
-					<span class="num">{{item.content}}个</span>
+					<span class="num">{{item.name}}</span>
 				</li>
 				<!-- <li>
 					<span class="numname">社群金牌小店数</span>

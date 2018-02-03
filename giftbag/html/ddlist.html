@@ -13,13 +13,13 @@
 	<div id="ddlist">
 		<!-- 顶部 -->
 		<div class="title">
-			<div :class="{li:true, bluebott:active == ''}" @click="titlezt()">全部</div>
+			<div :class="{li:true, bluebott:active == ''}" @click="titlezt('')">全部</div>
 			<div :class="{li:true, bluebott:active == 1}" @click="titlezt(1)">待发货</div>
 			<div :class="{li:true, bluebott:active == 2}" @click="titlezt(2)">待收货</div>
 			<div :class="{li:true, bluebott:active == 3}" @click="titlezt(3)">交易成功</div>
 		</div>
 		<!-- 内容部分 -->
-		<div class="affcon" v-for="(item,index) in msg" :key="index">
+		<div class="affcon" v-for="(item,index) in msg" :key="index" @click="skipaff(item.ordersn)">
 			<div class="affcont">
 				<img :src="item.img" class="afftp">
 				<div class="addconr">
@@ -35,7 +35,7 @@
 			</div>
 			<!-- 退货的几个按钮 -->
 			<div class="quitbutton" v-if="item.status == 2">	
-				<div class="goodsbutt" @click="wuliu">物流</div>
+				<div class="goodsbutt" @click="wuliu(item.delivery)">物流</div>
 				<div class="goodsbutt" @click="qrsh(item.ordersn)">确认收货</div>
 				<div class="goodsbutt" @click="tkth(item.ordersn)">退货退款</div>
 			</div>
@@ -48,6 +48,24 @@
 				<img src="../images/fahuo.png" class="zt" v-if="item.status == 2">
 				<img src="../images/yfk.png" class="zt" v-if="item.status == 1">
 			</div>
+		</div>
+		<!-- 弹出提示 -->
+		<div class="hint" v-if="hin == 1">
+			 <div class="hintp">您确定要退货退款吗?</div>
+			 <div class="hintqx">
+			 	<span class="hintl" @click="qxth">取消</span>
+			 	<span class="hintr" @click="qesh">确认</span>
+			 </div>
+		</div>
+		<!-- 确认退货 -->
+		<div class="hint" v-if="qrts == 1">
+			<div class="hintp">{{tkmsg}}</div>
+			<div class="hintqx" @click="qrmsg">确认</div>
+		</div>
+		<!-- 确认收货 -->
+		<div class="hint" v-if="qrzhts == 1">
+			<div class="hintp">{{qrshts}}</div>
+			<div class="hintqx" @click="gbqrsh">确认</div>
 		</div>
 	</div>
 </body>

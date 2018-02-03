@@ -2,6 +2,7 @@ html,body,#ddlist {
 	width: 100%;
 	height: 100vh;
 	background-color: #F7F7F7;
+	position: relative;
 	/* 顶部 */
 	.title {
 		width: 100%;
@@ -110,6 +111,39 @@ html,body,#ddlist {
 			}
 		}
 	}
-
+	/* 退货提示 */
+	.hint {
+		width: 4.47rem;
+		padding: 0.27rem 0.13rem;
+		box-sizing: border-box;
+		background:rgba(0,0,0,0.6);
+		position: fixed;
+		left: 50%;
+		margin-left: -1.73rem;
+		top: 50%;
+		margin-top: -1.33rem;
+		border-radius: 0.4rem; 
+		color: #fff;
+		font-size: 0.43rem;
+		text-align: center;
+		.hintp {		
+			
+			
+		}
+		.hintqx {
+			margin-top: 0.66rem;
+			overflow: hidden;
+			height: 0.8rem;
+			line-height: 0.8rem;
+			.hintl {
+				width: 50%;
+				float: left;
+			}
+			.hintr {
+				width: 50%;
+				float: right;
+			}
+		}
+	}
 
 }

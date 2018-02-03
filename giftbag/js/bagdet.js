@@ -9,7 +9,10 @@ var vm = new Vue({
 	    	let url = 'http://www.pluss.com/mobile.php?act=plus&op=giftDetail&pin=11009'
 	    	axios.get(url,{params:{gift_id:this.baglist_id}}).then(res=>{
 	    		this.msg = res.data.msg
-	    		console.log(this.msg)
+	    		if(res.data.status == 2){ 
+	    			window.location.href = '../html/mtshop.html'
+	    		}
+	    		// console.log(this.msg)
 	    	})
 	    },
 	   getQueryString:function (name) { 
@@ -23,11 +26,11 @@ var vm = new Vue({
 	      return context == null || context == "" || context == "undefined" ? "" : context; 
 	    },
 	    buy:function(){
-	    	window.location.href = '../html/affirm.html?' + '&pin=' + this.baglist_id
+	    	window.location.href = '../html/affirm.html?' + '&id=' + this.baglist_id
 	    }
 	  },
 	  created:function(){
-	  	this.baglist_id = this.getQueryString("pin")
+	  	this.baglist_id = this.getQueryString("id")
 	  	this.api_bagdet()
 	  	
 	  	

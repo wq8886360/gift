@@ -10,15 +10,14 @@
 	<link rel="stylesheet" href="../css/affirm.min.css">
 </head>
 <body>
-	<div id="affirm">
+	<div id="affirm" v-if="msg">
 		<!-- 收货地址 -->
-		<a href="../html/goodssite.html">
-			<div class="site">
-				<img src="../images/收货地址.png" class="shdz">
-				<span class="sitewz">请添加您的收货地址</span>
-				<img src="../images/icon-ri.png" class="iconr">
-			</div>
-		</a>
+		<div class="site" @click="dizhi">
+			<img src="../images/收货地址.png" class="shdz">		
+			<span class="sitewz" v-if="panduan == 6">{{adress}}</span>
+			<span class="sitewz" v-else>请添加您的收货地址</span>
+			<img src="../images/icon-ri.png" class="iconr">
+		</div>
 			
 		<!-- 中间内容 -->
 		<div class="affcon">
@@ -36,9 +35,10 @@
 				共计1减商品 合计:￥{{msg.price}}（包邮）
 			</div>
 		</div>
-		<!-- 底部按钮 -->		 	
-		<div class="qrbut">确认支付</div>
-		
+		<!-- 底部按钮 -->	
+		<!-- <form action="http://www.pluss.com/mobile.php?act=plus&op=orderPay&ordersn=pin=11009" method="post">  -->	
+			<input type="submit" class="qrbut" value="确认支付" @click="queren"> 
+		<!-- </form>	 -->
 	</div>
 </body>
 <script src="../static/polyfill.min.js"></script>

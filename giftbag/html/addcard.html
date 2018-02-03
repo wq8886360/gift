@@ -13,42 +13,53 @@
 	<div id="addcard">
 		<div class="txye">
 			<span class="txyetitle">可提现余额</span>
-			<span class="txyema"><span class="red">1268</span>元</span>
+			<span class="txyema"><span class="red">{{coin}}</span>元</span>
 		</div>
 		<!-- 添加支付宝账号 -->
 		<div class="addbank">
-			<a href="../html/addctwo.html">
+			<a @click='jump'>
 				<div class="addbankcon">
 					<span class="addh">+</span>
-					<span class="addtitle">添加支付宝账号</span>
+					<span v-if='bao_state!=1' class="addtitle">添加支付宝账号</span>
+					<span v-else class="addtitle">{{username}}</span>
 					<img src="../images/icon-ri.png" >
 				</div>
 			</a>
 				
 		</div>
 		<!-- 下一步 -->
-		<div class="nextstep">
+		<div @click='down' class="nextstep">
 			下一步
 		</div>
+		<div class="mask" v-if='isState'>
+			<div class="mask_top">
+				<div class="title">
+					<div class="ziti">请输入短信验证码</div>
+					<div class="photo">
+						<img @click='isState=false' src="../images/close_gray.png" alt="">
+					</div>
+					<div class="withdrawal">
+						提现
+					</div>
+					<div class="coin">￥ {{coin}}</div>
+					<div class="countdown">
+						<input v-model='code_tel' maxlength="4" class="code_yzm" type="text">
+						<span v-if='!sendMsgDisabled' @click='Verification' class="huoqu">获取</span>
+						<span v-if='sendMsgDisabled'  class="huoqu">{{time}}s</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
 		 
 	</div>
 </body>
 <script src="http://static.sldlcdn.com/resource/script/flexible.js"></script>
 <script src="../static/polyfill.min.js"></script>
 <script src="http://static.sldlcdn.com/resource/shuangshier/js/lib/vue.js"></script>
+<script src="../static/axios.min.js"></script>
+<script src='../js/min/addcard.min.js'></script>
 <!-- 引入组件库 -->
 <script src="https://static.sldlcdn.com/resource/shuangshier/js/lib/mint.js"></script>
-<script>
-	var vm = new Vue({
-		data:function (){
-			return {				
-				
-			}
-		},
-		methods: {
-		    
-		  }
-	})
-	vm.$mount('#addcard')
-</script>
+
 </html>

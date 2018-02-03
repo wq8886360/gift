@@ -27,10 +27,9 @@ var vm = new Vue({
 	    		this.equ = this.datadre.plus_equity
 	    		this.shopid = this.datadre.shopid
 	    		this.buyid = this.datadre.plus_equity.is_buy 
-	    		// console.log(this.equ.is_buy)
-	    		// console.log(this.pin)    		
-    			console.log(this.datadre);
-    			// console.log(this.buyid)
+	    		if(response.data.status == 2){ 
+	    			window.location.href = '../html/mtshop.html'
+	    		}
   				})		 
 	    },
 	    Toast:function(){	

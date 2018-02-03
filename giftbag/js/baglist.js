@@ -13,11 +13,14 @@ var vm = new Vue({
 	    		this.msg = res.data.msg
 	    		this.page = this.msg.page
 	    		this.count = this.msg.count
-	    		console.log(this.msg) 
+	    		if(res.data.status == 2){ 
+	    			window.location.href = '../html/mtshop.html'
+	    		}
+	    		// console.log(this.msg) 
 	    	})
 	    },
 	    baglist:function(id){
-	    	window.location.href = '../html/bagdet.html?' + '&pin=' + id 
+	    	window.location.href = '../html/bagdet.html?' + '&id=' + id 
 	    }
 	  },
 	  created(){

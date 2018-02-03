@@ -4,6 +4,89 @@ html,body, #addcard {
 	width: 100%;
 	height: 100vh;
 	background-color: #F0F0F0;
+	.mask{
+		width: 100vw;
+		height: 100vh;
+		top: 0px;
+		left: 0px;
+		position: fixed;
+		background: rgba(0,0,0,0.6);
+		z-index: 100;
+		.mask_top{
+			width: 6.67rem;
+			height: 4.56rem;
+			position:absolute;
+			top:50%;
+			background: #ffffff;
+			margin-top: -2.28rem;
+			left:50%;
+			margin-left: -3.335rem;
+			.title{
+				width: 100%;
+				height: 1.11rem;
+				border-bottom: 1px solid #E5E5E5;
+				position: relative;
+				.ziti{
+					color:#1C1B20;
+					font-size: 0.37rem;
+					text-align:center;
+					line-height: 1.11rem;
+				}
+				.photo{
+					width: 0.37rem;
+					height: 0.37rem;
+					position: absolute;
+					right: 0.35rem;
+					top: 50%;
+					margin-top: -0.155rem;
+					img{
+						width: 100%;
+						height: 100%;
+					}
+				}
+				.withdrawal{
+					font-size: 0.35rem;
+					text-align: center;
+					margin-top: 0.27rem;
+					color:#1C1B20;
+				}
+				.coin{
+					font-family: PingFang-SC-Medium;
+					font-size: 0.45rem;
+					color:#048BFE;
+					text-align:center;
+					margin-top: 0.25rem;
+				}
+				.countdown{
+					width: 5.33rem;
+					height: 1.07rem;
+					border-radius: 4px;
+					border: 1px solid #D7D4D4;
+					margin: 0.43rem  auto 0;
+					.code_yzm{
+						width: 4.47rem;
+						float: left;
+						height: 1.07rem;
+						border:none;
+						outline: none;
+						background: none;
+						text-indent: 0.27rem;
+					}
+					.huoqu{
+						width: 0.86rem;
+						float: right;
+						height: 1.07rem;
+					
+						text-align: center;
+						line-height: 1.07rem;
+						font-size: 0.27rem;
+						color:#858585;
+						background: #EEEEEE;
+					}
+				}
+			}
+		}
+	}
 }
 .red {
 	color: #FB0036;

@@ -16,10 +16,9 @@ var vm = new Vue({
 				this.items = this.datadre.item;
 				this.img = this.items.content
 				this.kefuid = this.items[1].content[0].img_id
-				// console.log(this.kefuid)
-				// console.log(this.items)
-
-				console.log(response);
+				if(response.data.status == 2){ 
+					window.location.href = '../html/mtshop.html'
+				}
 			});
 		},
 		touch:function(){
