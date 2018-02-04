@@ -66,6 +66,7 @@ var vm = new Vue({
 				handler:function(){
 				if(this.btn_state){
 					this.four_state=true;
+					console.log(this.btn_state)
 				}else{
 					this.four_state=false;
 				}
@@ -78,7 +79,7 @@ var vm = new Vue({
 	    	let url = 'http://www.pluss.com/mobile.php?act=plus&op=plusLogin';
 	    	if(this.btn_state && this.dx_yzm && this.yzm_num && this.mobile_model){
 	    		axios.get(url,{params:{mobile:this.mobile_model,mobile_code:this.dx_yzm,code:this.yzm_num}}).then(res=>{
-	    			console.log(res)
+	    			// console.log(res)
 	    			if(res.data.status==1){
 	    				location.href='../html/particulars.html';
 	    			}else{
@@ -175,6 +176,7 @@ var vm = new Vue({
   		}
 	},
 	created:function(){
+		this.btn_state=true;
 		this.changcode()
 	}
 })

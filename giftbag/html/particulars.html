@@ -8,10 +8,12 @@
 	<!-- 引入样式 -->
 	<link rel="stylesheet" href="http://static.sldlcdn.com/resource/shuangshier/css/reset/mint.css">
 	<link rel="stylesheet" href="../css/particulars.min.css">
+	<!-- <script src="../js/pub.js"></script> -->
 	<title>Document</title>
 </head>
+
 <body>
-	<div id="particulars" >
+	<div id="particulars" v-if='msg'>
 		<!-- 新年巨献 -->
 		<div class="yearcon">
 			<img src="../images/bgtp.png" class="yearbg">
@@ -124,12 +126,13 @@
 			</ul>
 		</div>
 	</div>
+
 <script src="../static/polyfill.min.js"></script>
 <script src="http://static.sldlcdn.com/resource/script/flexible.js"></script>
 <script src="http://static.sldlcdn.com/resource/shuangshier/js/lib/vue.js"></script>
 <script src="../static/axios.min.js"></script>
 <!-- 引入组件库 -->
-<script src="https://static.sldlcdn.com/resource/shuangshier/js/lib/mint.js"></script>
+<script src="http://static.sldlcdn.com/resource/shuangshier/js/lib/mint.js"></script>
 <script src="../js/min/particulars.min.js"></script>
 </body>
 </html>

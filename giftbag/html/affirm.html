@@ -8,13 +8,25 @@
 	<!-- 引入样式 -->
 	<link rel="stylesheet" href="http://static.sldlcdn.com/resource/shuangshier/css/reset/mint.css">
 	<link rel="stylesheet" href="../css/affirm.min.css">
+	<script src="../static/polyfill.min.js"></script>
+	<script src="http://static.sldlcdn.com/resource/script/flexible.js"></script>
+	<script src="http://static.sldlcdn.com/resource/shuangshier/js/lib/vue.js"></script>
+	<script src="../static/axios.min.js"></script>
+	<!-- 引入组件库 -->
+	<script src="https://static.sldlcdn.com/resource/shuangshier/js/lib/mint.js"></script>
 </head>
 <body>
 	<div id="affirm" v-if="msg">
 		<!-- 收货地址 -->
 		<div class="site" @click="dizhi">
 			<img src="../images/收货地址.png" class="shdz">		
-			<span class="sitewz" v-if="panduan == 6">{{adress}}</span>
+			<!-- <span class="sitewz" v-if="panduan == 6">{{city1}} {{city2}} {{city3}} {{adress}}</span> -->
+			<div class="sitewz" v-if="panduan == 6">
+				<span v-html="city1"></span>
+				<span v-html="city2"></span>
+				<span v-html="city3"></span>
+				<span v-html="adress"></span>
+			</div>
 			<span class="sitewz" v-else>请添加您的收货地址</span>
 			<img src="../images/icon-ri.png" class="iconr">
 		</div>
@@ -26,7 +38,7 @@
 				<div class="addconr">
 					<p class="affwz">{{msg.title}}</p>
 					<div class="affmen">
-						<div class="affmy">￥<span class="affmeble">{{msg.market_price}}</span></div>
+						<div class="affmy">￥<span class="affmeble">{{msg.price}}</span></div>
 						<div class="affch">x1</div>
 					</div>
 				</div>
@@ -41,11 +53,6 @@
 		<!-- </form>	 -->
 	</div>
 </body>
-<script src="../static/polyfill.min.js"></script>
-<script src="http://static.sldlcdn.com/resource/script/flexible.js"></script>
-<script src="http://static.sldlcdn.com/resource/shuangshier/js/lib/vue.js"></script>
-<script src="../static/axios.min.js"></script>
-<!-- 引入组件库 -->
-<script src="https://static.sldlcdn.com/resource/shuangshier/js/lib/mint.js"></script>
+
 <script src="../js/min/affirm.min.js"></script>
 </html>

@@ -5,6 +5,10 @@ var vm = new Vue({
 			index:0,//是否添加地址
 			panduan:0,//判断是否添加地址
 			adress:'',//收货地址
+			city1:'',
+			city2:'',
+			city3:'',
+			
 
 		}
 	},

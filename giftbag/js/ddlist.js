@@ -8,6 +8,7 @@ var vm = new Vue({
 			tkmsg:'',//确认后的提示
 			qrshts:'',//确认收货的提示
 			qrzhts:0,//点击确认收货的状态
+			cnmm:0,
 		}
 	},
 	methods: {
@@ -33,40 +34,36 @@ var vm = new Vue({
 	    skipaff:function(ordersn){
 	    	window.location.href = '../html/listxq.html?' + '&ordersn=' + ordersn
 	    },
-	    tkth:function(ordersn){ 
+	    tkth:function(){ 
 	    	this.hin = 1
+	    	
+	    },
+	    qrsh:function(ordersn){
+	    	this.qrzhts = 1
+
+	    },
+	    wuliu:function(delivery){	    	
+	    	window.location.href = delivery
+	    },
+	    qesh:function(ordersn){  	
 	    	let url = 'http://www.pluss.com/mobile.php?act=plus&op=orderReturn&pin=11009'
 	    	axios.get(url,{params:{ordersn:ordersn}}).then(res=>{
 	    		this.tkmsg = res.data.msg
 	    		console.log(res)
 	    		console.log(this.tkmsg)
 	    	})
-	    	
+	    	this.hin = 0
+	    	this.qrts = 1
 	    },
-	    qrsh:function(ordersn){
-	    	this.qrzhts = 1
+	    gbqrsh:function(ordersn){
 	    	let url = 'http://www.pluss.com/mobile.php?act=plus&op=orderFinish&pin=11009'
 	    	axios.get(url,{params:{ordersn:ordersn}}).then(res=>{
 	    		this.qrshts = res.data.msg
 	    		console.log(res)
 	    		// console.log(ordersn)
 	    	})	
-	    },
-	    wuliu:function(delivery){	    	
-	    	window.location.href = delivery
-	    },
-	    qxth:function(){
-	    	this.hin = 0
-	    },
-	    qesh:function(){
-	    	this.hin = 0
-	    	this.qrts = 1
-	    },
-	    qrmsg:function(){
-	    	this.qrts = 0
-	    },
-	    gbqrsh:function(){
 	    	this.qrzhts = 0
+	    	this.cnmm = 1
 	    }
 	   
 	  },

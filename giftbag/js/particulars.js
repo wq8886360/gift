@@ -20,11 +20,11 @@ var vm = new Vue({
 	    },
 	    interface:function() { 
 	    	// let url = "http://www.plus.com/index.php?m=Api&c=Plus&a=plusDetail&pin=" + this.pin + '&wskey='  +this.wskey;
-	    	let url = 'http://www.pluss.com/mobile.php?act=plus&op=plusList&pin=11009'
+	    	let url = 'http://www.pluss.com/mobile.php?act=plus&op=plusList'
 	    	// let url = req_url+'&act=plus&op=plusList'
 	    	axios.get(url).then(response => {
 	    		this.msg = response.data.msg
-	    		this.widt = this.msg.plus_gift.length
+	    		// this.widt = this.msg.plus_gift.length
 	    		this.seet = this.msg.plus_equity.settling_money
 	    		this.gorwinfo = this.msg.plus_grow.grow_info
 	    		this.gorwitem = this.msg.plus_grow.grow_item

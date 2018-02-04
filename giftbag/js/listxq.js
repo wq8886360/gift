@@ -52,7 +52,7 @@ var vm = new Vue({
 	    /*确认收货api*/
 	    sure_que(){
 	    	let url ='http://www.pluss.com/mobile.php?act=plus&op=orderFinish&pin=11009';
-	    	axios.get(url,{params:{ordersn:"lb180201229006"}}).then(res =>{
+	    	axios.get(url,{params:{ordersn:this.ordersn}}).then(res =>{
 	    		console.log(res)
 				if(res.data.status==1){
 					this.shou_state=false;

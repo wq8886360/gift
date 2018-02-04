@@ -8,11 +8,13 @@ var vm = new Vue({
 	    api_bagdet:function(){
 	    	let url = 'http://www.pluss.com/mobile.php?act=plus&op=giftDetail&pin=11009'
 	    	axios.get(url,{params:{gift_id:this.baglist_id}}).then(res=>{
-	    		this.msg = res.data.msg
+	    		
 	    		if(res.data.status == 2){ 
 	    			window.location.href = '../html/mtshop.html'
 	    		}
-	    		// console.log(this.msg)
+	    		this.msg = res.data.msg
+	    		
+	    		console.log(this.msg)
 	    	})
 	    },
 	   getQueryString:function (name) { 

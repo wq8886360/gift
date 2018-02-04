@@ -27,6 +27,7 @@ var vm = new Vue({
 	    		this.equ = this.datadre.plus_equity
 	    		this.shopid = this.datadre.shopid
 	    		this.buyid = this.datadre.plus_equity.is_buy 
+	    		// console.log(response)
 	    		if(response.data.status == 2){ 
 	    			window.location.href = '../html/mtshop.html'
 	    		}
